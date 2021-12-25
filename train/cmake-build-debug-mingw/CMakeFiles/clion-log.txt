@@ -1,0 +1,76 @@
+"D:\tool\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - MinGW Makefiles" C:\Users\yumu\Desktop\c语言\train
+    -- src/CompilerIdCXX-CMakeCXXCompilerId.cpp will be compiled to bin/CompilerIdCXX-CMakeCXXCompilerId
+CMake Error at CMakeLists.txt:10 (add_executable):
+  add_executable cannot create target "CompilerIdCXX-CMakeCXXCompilerId"
+  because another target with the same name already exists.  The existing
+  target is an executable created in source directory
+  "C:/Users/yumu/Desktop/c璇█/train".  See documentation for policy
+  CMP0002 for more details.
+
+
+    -- src/CompilerIdCXX-CMakeCXXCompilerId.cpp will be compiled to bin/CompilerIdCXX-CMakeCXXCompilerId
+CMake Error at CMakeLists.txt:10 (add_executable):
+  The target name "train-鍋氶" is reserved or not valid for certain CMake
+  features, such as generator expressions, and may result in undefined
+  behavior.
+
+
+    -- src/train-鍋氶.cpp will be compiled to bin/train-鍋氶
+CMake Error at CMakeLists.txt:10 (add_executable):
+  The target name "train-鍑戞暟瀛�" is reserved or not valid for certain
+  CMake features, such as generator expressions, and may result in undefined
+  behavior.
+
+
+    -- src/train-鍑戞暟瀛�.cpp will be compiled to bin/train-鍑戞暟瀛�
+CMake Error at CMakeLists.txt:10 (add_executable):
+  The target name "train-鏃呰瀹剁殑棰勭畻" is reserved or not valid for
+  certain CMake features, such as generator expressions, and may result in
+  undefined behavior.
+
+
+    -- src/train-鏃呰瀹剁殑棰勭畻.cpp will be compiled to bin/train-鏃呰瀹剁殑棰勭畻
+CMake Error at CMakeLists.txt:10 (add_executable):
+  The target name "train-姹夎濉�" is reserved or not valid for certain
+  CMake features, such as generator expressions, and may result in undefined
+  behavior.
+
+
+    -- src/train-姹夎濉�.cpp will be compiled to bin/train-姹夎濉�
+CMake Error at CMakeLists.txt:10 (add_executable):
+  The target name "train-娓呴櫎鏉傝崏" is reserved or not valid for certain
+  CMake features, such as generator expressions, and may result in undefined
+  behavior.
+
+
+    -- src/train-娓呴櫎鏉傝崏.cpp will be compiled to bin/train-娓呴櫎鏉傝崏
+CMake Error at CMakeLists.txt:10 (add_executable):
+  The target name "train-绾稿竵鎹㈢‖甯�" is reserved or not valid for
+  certain CMake features, such as generator expressions, and may result in
+  undefined behavior.
+
+
+    -- src/train-绾稿竵鎹㈢‖甯�.cpp will be compiled to bin/train-绾稿竵鎹㈢‖甯�
+CMake Error at CMakeLists.txt:10 (add_executable):
+  The target name "train-鑳屽寘闂" is reserved or not valid for certain
+  CMake features, such as generator expressions, and may result in undefined
+  behavior.
+
+
+    -- src/train-鑳屽寘闂.cpp will be compiled to bin/train-鑳屽寘闂
+CMake Error at CMakeLists.txt:10 (add_executable):
+  The target name "train-鑷畧鏁�" is reserved or not valid for certain
+  CMake features, such as generator expressions, and may result in undefined
+  behavior.
+
+
+    -- src/train-鑷畧鏁�.cpp will be compiled to bin/train-鑷畧鏁�
+CMake Error at CMakeLists.txt:10 (add_executable):
+  The target name "train-璋佹槸绐冭醇" is reserved or not valid for certain
+  CMake features, such as generator expressions, and may result in undefined
+  behavior.
+
+
+    -- src/train-璋佹槸绐冭醇.cpp will be compiled to bin/train-璋佹槸绐冭醇
+-- Configuring incomplete, errors occurred!
+See also "C:/Users/yumu/Desktop/c璇█/train/cmake-build-debug-mingw/CMakeFiles/CMakeOutput.log".
