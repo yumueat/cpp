@@ -1,0 +1,5 @@
+902 xiaoming 90 80 70
+107 xiaohong 78 89 97
+099 xiaogang 67 78 98
+020 xiaohang 98 70 57
+001 xiaozhi 68 89 90
