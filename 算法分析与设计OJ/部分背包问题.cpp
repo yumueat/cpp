@@ -6,6 +6,5 @@ int main()
 	int c,d; 
 	int f,j; 
 	int ds; 
-	int dp; 
 	return 0;
 }
