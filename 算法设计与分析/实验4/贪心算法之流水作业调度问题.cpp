@@ -45,7 +45,6 @@ int solve(int n, int *a, int *b) //求解流水作业调度问题
 int main()
 {
 	int n, i;
-	
 	cout << "请输入作业数:";
 	cin >> n;
 	int *a = new int[n];
