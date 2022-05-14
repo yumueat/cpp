@@ -45,6 +45,7 @@ int solve(int n, int *a, int *b) //求解流水作业调度问题
 int main()
 {
 	int n, i;
+	
 	while (~scanf("%d", &n))
 	{
 		int *a = new int[n];
