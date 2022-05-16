@@ -4,7 +4,7 @@ using namespace std;
 #define MAX 42
 #define INF 0x3f3f3f3f
 int n, start, endv, c[MAX][MAX], nextv[MAX], dp[MAX], Count = 1;
-
+int minNum = INF * -1;
 void Init()
 {
 	n = 18;
@@ -62,8 +62,24 @@ void Init()
 	c[15][17] = 0;
 	c[16][17] = 0;
 }
-int f(int s)
+int f(int s, int sum, int j)
 {
+	if (j == 0 || j == 17)
+	{
+		sum += 0;
+	}
+	else if (j % 4 == 0)
+	{
+		sum += 4;
+	}
+	else
+	{
+		sum += j % 4;
+	}
+	if (sum > 7)
+	{
+		return minNum;
+	}
 	if (dp[s] != -1)
 	{
 		return dp[s];
@@ -72,42 +88,42 @@ int f(int s)
 	{
 		dp[s] = 0;
 		return dp[s];
-		// printf("(%d) f (%s)=0\n",Count++,vname[s])
 	}
 	else
 	{
-		int cost, mincost = INF, minj;
+		int cost, maxcost = 0, maxj, sum = 0;
 		for (int j = 0; j < n; j++)
 		{
 			if (c[s][j] != 0 && c[s][j] != INF)
 			{
-//				cout << "c[s][j]"
-//					 << " " << c[s][j] << endl;
-				cost = c[s][j] + f(j);
-//				cout << "f(j)" << f(j) << endl;
-				if (mincost > cost)
+
+				// cout << "c[" << s << "][" << j << "]"
+				// 	 << " " << c[s][j] << endl;
+				cost = c[s][j] + f(j, sum, j);
+				// cout << "f(" << j << ")" << f(j, sum) << endl;
+				if (maxcost < cost)
 				{
-					// cout << "mincost = " << mincost << endl;
-					// cout << "cost = " << cost << endl;
-					mincost = cost;
-					minj = j;
-					// cout << "flasg" << endl;
+					maxcost = cost;
+					maxj = j;
 				}
 			}
 		}
-		dp[s] = mincost;
-		nextv[s] = minj;
-		// printf("(%d) f (%s)= c(%s,%s)+f(%s)=%d,",Count++,vname[s],vname[s],vname[minj],vname[minj],dp[s]);
-		// printf("nextv(%s)=%s\n",vname[s],vname[minj]);
-		// cout << dp[s] << endl;
+
+		dp[s] = maxcost;
+		nextv[s] = maxj;
 		return dp[s];
 	}
 }
 int main()
 {
+	int sum = 0;
 	Init();
-	int ans = f(start);
-	// printf("%d\n", ans);
-	cout<<"21"<<endl; 
+	int ans = f(start, sum, 0);
+	printf("%d\n", ans);
+	// for (int j = 0; j < 4; j++)
+	// {
+	// 	cout << nextv[j] << " ";
+	// }
+	// cout << endl;
 	return 0;
 }
