@@ -1,64 +1,57 @@
-#include<iostream>
-using namespace std; 
-int ans;		 		
-void Merge(int a[],int low,int mid,int high) //二路归并 
-{  
-//	cout<<low<<' '<<high<<endl;
-   int i=low;
-   int j=mid+1;
-   int k=0;
-   int *tmp=(int *)malloc((high-low+1)*sizeof(int));
-   while(i<=mid && j<=high) 		
-   {  if(a[i]>a[j])
-      {  tmp[k++]=a[j++];
-         ans+=mid-i+1;
-      }
-      else tmp[k++]=a[i++];
-   }
-   while(i<=mid) tmp[k++]=a[i++];
-   while(j<=high) tmp[k++]=a[j++];
-   for(int k1=0;k1<k;k1++)		
-       a[low+k1]=tmp[k1];
-   free(tmp);
-}
-void get_reverse_order_pair_num(int a[],int start,int end)//递归的划分数组以调用二路归并算法进行排序和计数 
+#include <bits/stdc++.h>
+using namespace std;
+
+int temp[500010];
+
+void mergeSort(int *q, int start, int end, long long int &count)
 {
-	if (start == end - 1)//划分到最小单位的情况 
+	if (start >= end)
 	{
-		Merge(a,start,start,end); 
+		return;
 	}
-	else if(start == end - 2)//3个时的特殊情况 
+
+	int mid = (start + end) / 2;
+	mergeSort(q, start, mid, count);
+	mergeSort(q, mid + 1, end, count);
+	int i = start, j = mid + 1, k = 0;
+	while (i <= mid && j <= end)
 	{
-		Merge(a,start,start,start+1);
-		Merge(a,start,start+1,end);
-	} 
-	else//递归 
+		if (q[i] <= q[j])
+		{
+			temp[k++] = q[i++];
+		}
+
+		else
+		{
+			temp[k++] = q[j++];
+			count = count + mid - i + 1;
+		}
+	}
+	while (i <= mid)
 	{
-		int start1=start;
-		int end1=(start+end)/2;
-		int start2=end1+1;
-		int end2=end;
-		get_reverse_order_pair_num(a,start1,end1);
-		get_reverse_order_pair_num(a,start2,end2);
-		Merge(a,start,(start+end)/2,end);
+		temp[k++] = q[i++];
+	}
+
+	while (j <= end)
+	{
+		temp[k++] = q[j++];
+	}
+
+	for (i = start, j = 0; i <= end; i++, j++)
+	{
+		q[i] = temp[j];
 	}
 }
+
 int main()
 {
-	int n;
+	int n, a[500010], i;
+	long long count = 0;
 	cin >> n;
-	int * a = new int[n];
-	for (int i = 0 ; i < n ; i++)
+	for (i = 0; i < n; i++)
 	{
 		cin >> a[i];
 	}
-//	int a[]={3,1,4,5,2};//要求的整数数组 
-	get_reverse_order_pair_num(a,0,n-1);
-	delete a;
-	cout<<ans;
-//	for (int i=0;i<=4;i++)
-//	{
-//		cout<<a[i]<<' ';
-//	} 
-	return 0;
+	mergeSort(a, 0, n - 1, count);
+	cout << count << endl;
 }
