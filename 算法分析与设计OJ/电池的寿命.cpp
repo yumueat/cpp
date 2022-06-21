@@ -47,7 +47,6 @@ int main()
 				}
 			}
 		}
-		// printf("%.1lf\n", recursion(n, a, sum(n, a)));
 		cout << fixed << setprecision(1) << recursion(n, a, sum(n, a)) << endl;
 	}
 	return 0;
